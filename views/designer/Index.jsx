@@ -19,7 +19,7 @@ class Index extends React.Component {
                         </a>
                         <br />
                         <a href="/fashioner">
-                            Enter the world of Fashion Blogging
+                            Enter the World of Fashion Blogging
                         </a>
                     </nav>
                     <ul>
