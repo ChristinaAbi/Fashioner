@@ -3,7 +3,7 @@ const Layout = require('../components/Layout')
 
 class Edit extends React.Component {
     render() {
-        const { _id, title, entryNumber, description } = this.props.fashioner
+        const { _id, title, entryNumber, description, readyToPost } = this.props.fashioner
         return (
             <Layout>
                 <div>
@@ -18,6 +18,9 @@ class Edit extends React.Component {
                         <br />
 
                         Description: <input type="textarea" name="description" defaultValue={description} />
+                        <br />
+
+                        Post Worthy?: <input type="checkbox" name="readyToPost" checked={readyToPost} />
                         <br />
 
                         <input type="submit" name="" value="Submit Changes" />

@@ -6,10 +6,10 @@ const Fashioner = require('../models/fashioner')
 //////////////////////////
 ///////// INDEX /////////
 
-router.get('/fashioner', (req,res) => {
+router.get('/', (req,res) => {
     Fashioner.find({}, (error, allFashioners) => {
-        res.render('./fashioner/Index', {
-            fashioner: allFashioners
+        res.render('fashioner/Index', {
+            fashioners: allFashioners
         })
     })
     
@@ -18,27 +18,33 @@ router.get('/fashioner', (req,res) => {
 //////////////////////////
 ////////// NEW //////////
 router.get('/new', (req,res) => {
-    res.render('./fashioner/New')
+    res.render('fashioner/New')
 })
 
 //////////////////////////
 ///////// DELETE /////////
-router.delete('/fashioner/:id', (req,res) => {
+router.delete('/:id', (req,res) => {
     Fashioner.findByIdAndRemove(req.params.id, (err, singleFashioner) => {
         res.redirect('/fashioner');
 })
 
 //////////////////////////
 ///////// UPDATE /////////
-router.put('/fashioner/:id', (req, res) => {
-    Fashioner.findByIdAndUpdate(req.params.id, req.body, (error, updatedFashioner) => {
-        res.redirect('/fashioner');
+router.put('/:id', (req, res) => {
+    req.body.readyToPost = req.body.readyToPost === "on" ? true : false
+    Fashioner.findByIdAndUpdate(req.params.id, req.body, {new : true}, (error, updatedFashioner) => {
+        res.redirect('/');
     })
 })
 
 //////////////////////////
 ///////// CREATE /////////
-router.post('/fashioner', (req,res) => {
+router.post('/', (req,res) => {
+    if (req.body.readyToPost === 'on') {
+        req.body.readyToPost = true
+    } else {
+        req.body.readyToPost = false
+    }
     Fashioner.create(req.body, (error, createdFashioner) => {
         if (error) {
             console.log(error)
@@ -49,9 +55,9 @@ router.post('/fashioner', (req,res) => {
 
 //////////////////////////
 ///////// EDIT ///////////
-router.get('/fashioner/:id/edit', (req,res) => {
+router.get('/:id/edit', (req,res) => {
     Fashioner.findById(req.params.id, (error, foundFashioner) => {
-        res.render('./fashioner/Edit', {
+        res.render('fashioner/Edit', {
             fashioner: foundFashioner
         })
     })
@@ -60,10 +66,12 @@ router.get('/fashioner/:id/edit', (req,res) => {
 //////////////////////////
 ////////// SHOW //////////
 
-router.get('/fashioner/:id', (req,res) => {
+router.get('/:id', (req,res) => {
     Fashioner.findById(req.params.id, (error, foundFashioner) => {
-        res.render('./fashioner/Show', {
+        res.render('fashioner/Show', {
             fashioner: foundFashioner
         })
     })
 })})
+
+module.exports = router

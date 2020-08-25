@@ -5,11 +5,14 @@ const designerSchema = new Schema({
     title: {
         type: String, required: true
     },
-    entryNumber: {
+    outfitNumber: {
         type: String, required: true
     },
     description: {
         type: String, required: true
+    },
+    readyToShowOff: {
+        type: Boolean, required: true
     }
 }, {
     timestamps: true

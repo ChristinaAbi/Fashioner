@@ -1,15 +1,15 @@
 const express = require('express')
 const router =  express.Router()
-const Fashioner = require('../models/designer')
+const Designer = require('../models/designer')
 
 
 //////////////////////////
 ///////// INDEX /////////
 
-router.get('/designer', (req,res) => {
+router.get('/', (req,res) => {
     Designer.find({}, (error, allDesigners) => {
-        res.render('./designner/Index', {
-            designer: allDesigners
+        res.render('designer/Index', {
+            designers: allDesigners
         })
     })
     
@@ -18,19 +18,19 @@ router.get('/designer', (req,res) => {
 //////////////////////////
 ////////// NEW //////////
 router.get('/new', (req,res) => {
-    res.render('./designer/New')
+    res.render('designer/New')
 })
 
 //////////////////////////
 ///////// DELETE /////////
-router.delete('/designer/:id', (req,res) => {
+router.delete('/:id', (req,res) => {
     Designer.findByIdAndRemove(req.params.id, (err, singleDesigner) => {
         res.redirect('/designer');
 })
 
 //////////////////////////
 ///////// UPDATE /////////
-router.put('/designer/:id', (req, res) => {
+router.put('/:id', (req, res) => {
     Designer.findByIdAndUpdate(req.params.id, req.body, (error, updatedDesigner) => {
         res.redirect('/designer');
     })
@@ -38,7 +38,7 @@ router.put('/designer/:id', (req, res) => {
 
 //////////////////////////
 ///////// CREATE /////////
-router.post('/designer', (req,res) => {
+router.post('/', (req,res) => {
     Designer.create(req.body, (error, createdDesigner) => {
         if (error) {
             console.log(error)
@@ -49,9 +49,9 @@ router.post('/designer', (req,res) => {
 
 //////////////////////////
 ///////// EDIT ///////////
-router.get('/designer/:id/edit', (req,res) => {
+router.get('/:id/edit', (req,res) => {
     Designer.findById(req.params.id, (error, foundDesigner) => {
-        res.render('./designer/Edit', {
+        res.render('designer/Edit', {
             designer: foundDesigner
         })
     })
@@ -60,10 +60,12 @@ router.get('/designer/:id/edit', (req,res) => {
 //////////////////////////
 ////////// SHOW //////////
 
-router.get('/designer/:id', (req,res) => {
+router.get('/:id', (req,res) => {
     Designer.findById(req.params.id, (error, foundDesigner) => {
-        res.render('./designer/Show', {
+        res.render('designer/Show', {
             designer: foundDesigner
         })
     })
 })})
+
+module.exports = router

@@ -10,6 +10,9 @@ const fashionerSchema = new Schema({
     },
     description: {
         type: String, required: true
+    },
+    readyToPost: {
+        type: Boolean, required: true
     }
 }, {
     timestamps: true

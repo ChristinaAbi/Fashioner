@@ -3,7 +3,7 @@ const Layout = require('../components/Layout')
 
 class Show extends React.Component {
     render() {
-        const { title, entryNumber, description } = this.props.fashioner
+        const { title, entryNumber, description, readyToPost } = this.props.fashioner
         return (
             <Layout>
                 <div>
@@ -13,6 +13,8 @@ class Show extends React.Component {
                         Entry Number: {entryNumber}
                         <br />
                         Description: {description}
+                        <br />
+                        Was It Ready?: {readyToPost}
                     </p>
                 </div>
             </Layout>

@@ -18,8 +18,8 @@ class Index extends React.Component {
                             New Post
                         </a>
                         <br />
-                        <a href="/designer/new">
-                            Start a New Design
+                        <a href="/designer">
+                            Enter the world of Design
                         </a>
                     </nav>
                     <ul>

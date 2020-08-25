@@ -34,6 +34,14 @@ const fashionerController = require('./controllers/fashioner')
 app.use('/fashioner', fashionerController)
 
 
+app.get('/', (req,res) => {
+    res.redirect('/designer')
+})
+
+const designerController = require('./controllers/designer')
+
+app.use('/designer', designerController)
+
 app.listen(PORT, (req,res) => {
     console.log('Ready for take off')
 })

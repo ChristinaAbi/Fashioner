@@ -7,12 +7,21 @@ class New extends React.Component {
             <Layout>
                 <div>
                     <h1>
-                        New Blog Post
+                        Here's Where the Magic Begins
                     </h1>
+                    <h4>
+                        Drop your thoughts below and share to the Fashion World!
+                    </h4>
                     <form action="/fashioner" method="POST">
                         Title: <input type="text" name="title" />
+                        <br />
                         Entry Number: <input type="text" name="entryNumber" />
+                        <br />
                         Description: <input type="textarea" name="description" />
+                        <br />
+                        Ready To Post: <input type="checkbox" name="readyToPost" />
+                        <br />
+                        <input type="submit" name="" value="Add Post" />
                     </form>
                 </div>
             </Layout>
