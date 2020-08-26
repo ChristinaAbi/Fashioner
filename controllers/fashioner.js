@@ -12,12 +12,13 @@ router.get('/', (req,res) => {
             fashioners: allFashioners
         })
     })
-    
+
 })
 
 //////////////////////////
 ////////// NEW //////////
 router.get('/new', (req,res) => {
+    console.log('fashion')
     res.render('fashioner/New')
 })
 
@@ -26,6 +27,7 @@ router.get('/new', (req,res) => {
 router.delete('/:id', (req,res) => {
     Fashioner.findByIdAndRemove(req.params.id, (err, singleFashioner) => {
         res.redirect('/fashioner');
+})
 })
 
 //////////////////////////
@@ -49,6 +51,7 @@ router.post('/', (req,res) => {
         if (error) {
             console.log(error)
         }
+        console.log(createdFashioner)
         res.redirect('/fashioner')
     })
 })
@@ -72,6 +75,6 @@ router.get('/:id', (req,res) => {
             fashioner: foundFashioner
         })
     })
-})})
+})
 
 module.exports = router

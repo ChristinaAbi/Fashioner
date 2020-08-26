@@ -4,6 +4,7 @@ const Default = require('../components/Default')
 class Index extends React.Component {
     render() {
         const { designers } = this.props
+        console.log(designers)
         return (
             <Default>
                 <div>

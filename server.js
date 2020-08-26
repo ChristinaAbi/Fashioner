@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true}))
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 app.use(methodOverride('_method'))
-const mongoURI = process.env.MONGO_URI 
+const mongoURI = process.env.MONGO_URI
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connection.once('open', () => {
     console.log("connected to mongo");
@@ -32,11 +32,6 @@ app.get('/', (req,res) => {
 const fashionerController = require('./controllers/fashioner')
 
 app.use('/fashioner', fashionerController)
-
-
-app.get('/', (req,res) => {
-    res.redirect('/designer')
-})
 
 const designerController = require('./controllers/designer')
 

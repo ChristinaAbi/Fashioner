@@ -7,7 +7,7 @@ class New extends React.Component {
             <Layout>
                 <div>
                     <h1>
-                        Here's Where the Magic Begins
+                        Here's Where the Magic Begins test
                     </h1>
                     <h4>
                         Drop your thoughts below and share to the Fashion World!
@@ -17,7 +17,7 @@ class New extends React.Component {
                         <br />
                         Entry Number: <input type="text" name="entryNumber" />
                         <br />
-                        Description: <input type="textarea" name="description" />
+                        Description: <input type="text" name="description" />
                         <br />
                         Ready To Post: <input type="checkbox" name="readyToPost" />
                         <br />
