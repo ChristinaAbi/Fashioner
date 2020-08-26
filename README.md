@@ -15,8 +15,10 @@ This site uses the following database:
 
 Further Goals/ Unsolved Problems:
 - Add User Authentication
+- Allow user to upload image from their computer instead of using an  https:// link
 - Display Grid instead of Linear
 - Styling that mimics Instagram (polaroid pic style)
+- Allow users of Design site to sketch/draw right on the website and save as draft
 
 Notes:
 - Fix readyToShowOff for Designer Edit page
