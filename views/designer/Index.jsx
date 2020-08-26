@@ -8,21 +8,21 @@ class Index extends React.Component {
         return (
             <Default>
                 <div>
+                    <nav class="topnav">
+                        <a href="/designer/new">
+                            New Post
+                        </a>
+                        <a href="/fashioner">
+                            World of Fashion Blogging
+                        </a>
+                    </nav>
                     <h1>
                         Welcome to Designer!
                     </h1>
                     <h3>
                         The IT site for Fashion Designers Worldwide!
                     </h3>
-                    <nav>
-                        <a href="/designer/new">
-                            New Post
-                        </a>
-                        <br />
-                        <a href="/fashioner">
-                            Enter the World of Fashion Blogging
-                        </a>
-                    </nav>
+                   
                     <ul>
                         {
                             designers.map((designer, i) => {
@@ -32,6 +32,11 @@ class Index extends React.Component {
                                             {designer.title}
                                         </a>
                                         <br />
+                                        {designer.description}
+                                        <br />
+                                        <img src={designer.image} />
+                                        <br />
+                                        <footer class="footer"></footer>
                                         <a href={`/designer/${designer._id}/edit`}>
                                             Edit Post
                                         </a>
@@ -39,6 +44,7 @@ class Index extends React.Component {
                                         <form action={`/designer/${designer._id}?_method=DELETE`} method="POST">
                                             <input type="submit" value="Delete This Post" />
                                         </form>
+                                        <footer/>
                                     </li>
                                 )
                             })

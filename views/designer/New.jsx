@@ -6,13 +6,21 @@ class New extends React.Component {
         return (
             <Default>
                 <div>
+                <nav class="topnav">
+                        <a href="/designer">See All Designs</a>
+                    </nav>
                     <h1>
-                        Begin Your New Design Here
+                        Welcome to the Drawing Board
                     </h1>
+                    <h4>
+                        Drop your designs below and share to the Fashion World!
+                    </h4>
                     <form action="/designer" method="POST">
                         Title: <input type="text" name="title" />
                         <br />
                         Outfit Number: <input type="text" name="outfitNumber" />
+                        <br />
+                        Image Link: <input type="text" name="image" placeholder="https://"/>
                         <br />
                         Description: <input type="textarea" name="description" />
                         <br />

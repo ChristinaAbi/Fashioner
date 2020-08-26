@@ -3,7 +3,7 @@ const Default = require('../components/Default')
 
 class Edit extends React.Component {
     render() {
-        const { _id, title, outfitNumber, description, readyToShowOff } = this.props.designer
+        const { _id, title, outfitNumber, image, description, readyToShowOff } = this.props.designer
         return (
             <Default>
                 <div>
@@ -15,6 +15,9 @@ class Edit extends React.Component {
                         <br />
 
                         Outfit Number: <input type="text" name="outfitNumber" defaultValue={outfitNumber} />
+                        <br />
+
+                        Image: <input type="image" name="image" defaultValue={image} />
                         <br />
 
                         Description: <input type="textarea" name="description" defaultValue={description} />

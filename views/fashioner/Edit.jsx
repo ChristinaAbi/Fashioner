@@ -3,7 +3,7 @@ const Layout = require('../components/Layout')
 
 class Edit extends React.Component {
     render() {
-        const { _id, title, entryNumber, description, readyToPost } = this.props.fashioner
+        const { _id, title, entryNumber, image, description, readyToPost } = this.props.fashioner
         return (
             <Layout>
                 <div>
@@ -15,6 +15,9 @@ class Edit extends React.Component {
                         <br />
 
                         Entry Number: <input type="text" name="entryNumber" defaultValue={entryNumber} />
+                        <br />
+
+                        Image: <input type="image" name="image" defaultValue={image} />
                         <br />
 
                         Description: <input type="textarea" name="description" defaultValue={description} />

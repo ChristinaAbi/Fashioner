@@ -6,8 +6,11 @@ class New extends React.Component {
         return (
             <Layout>
                 <div>
+                    <nav class="topnav">
+                        <a href="/">See All Blog Posts</a>
+                    </nav>
                     <h1>
-                        Here's Where the Magic Begins test
+                        Here's Where the Magic Begins
                     </h1>
                     <h4>
                         Drop your thoughts below and share to the Fashion World!
@@ -16,6 +19,8 @@ class New extends React.Component {
                         Title: <input type="text" name="title" />
                         <br />
                         Entry Number: <input type="text" name="entryNumber" />
+                        <br />
+                        Image Link: <input type="text" name="image" placeholder="https://"/>
                         <br />
                         Description: <input type="text" name="description" />
                         <br />

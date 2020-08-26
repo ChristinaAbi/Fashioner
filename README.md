@@ -12,3 +12,11 @@ This site was created using the following programs:
 
 This site uses the following database:
 - mongoDB
+
+Further Goals/ Unsolved Problems:
+- Add User Authentication
+- Display Grid instead of Linear
+- Styling that mimics Instagram (polaroid pic style)
+
+Notes:
+- Fix readyToShowOff for Designer Edit page

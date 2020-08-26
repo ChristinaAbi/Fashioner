@@ -7,43 +7,48 @@ class Index extends React.Component {
         return (
             <Layout>
                 <div>
+                    <nav class="topnav">
+                        <a href="/fashioner/new">
+                            New Post
+                        </a>
+                        <a href="/designer">
+                            World of Design
+                        </a>
+                    </nav>
                     <h1>
                         Welcome to Fashioner!
                     </h1>
                     <h3>
                         The IT site for Fashion Bloggers Worldwide!
                     </h3>
-                    <nav>
-                        <a href="/fashioner/new">
-                            New Post
-                        </a>
-                        <br />
-                        <a href="/designer">
-                            Enter the World of Design
-                        </a>
-                    </nav>
-                    <ul>
-                        {
-                            fashioners.map((fashioner, i) => {
-                                return (
-                                    <li>
-                                        <a href={`/fashioner/${fashioner._id}`}>
-                                            {fashioner.title}
-                                        </a>
-                                        <br />
-                                        <a href={`/fashioner/${fashioner._id}/edit`}>
-                                            Edit Post
-                                        </a>
-                                        <br />
-                                        <form action={`/fashioner/${fashioner._id}?_method=DELETE`} method="POST">
-                                            <input type="submit" value="Delete This Post" />
-                                        </form>
-                                    </li>
-                                )
-                            })
+                        <ul>
+                            {
+                                fashioners.map((fashioner, i) => {
+                                    return (
+                                        <li>
+                                            <a href={`/fashioner/${fashioner._id}`}>
+                                                {fashioner.title}
+                                            </a>
+                                            <br />
+                                            {fashioner.description}
+                                            <br />
+                                            <img src={fashioner.image} />
+                                            <br />
+                                            <footer class="footer">
+                                                <a href={`/fashioner/${fashioner._id}/edit`}>
+                                                Edit Post
+                                                </a>
+                                            <br />
+                                            <form action={`/fashioner/${fashioner._id}?_method=DELETE`} method="POST">
+                                                <input type="submit" value="Delete This Post" />
+                                            </form></footer>
+                                            
+                                        </li>
+                                    )
+                                })
 
-                        }
-                    </ul>
+                            }
+                        </ul>
                 </div>
             </Layout>
         )
