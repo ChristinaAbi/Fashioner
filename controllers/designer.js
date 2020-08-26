@@ -12,7 +12,7 @@ router.get('/', (req,res) => {
             designers: allDesigners
         })
     })
-    
+
 })
 
 //////////////////////////
@@ -27,6 +27,7 @@ router.delete('/:id', (req,res) => {
     Designer.findByIdAndRemove(req.params.id, (err, singleDesigner) => {
         res.redirect('/designer');
 })
+})
 
 //////////////////////////
 ///////// UPDATE /////////
@@ -39,6 +40,7 @@ router.put('/:id', (req, res) => {
 //////////////////////////
 ///////// CREATE /////////
 router.post('/', (req,res) => {
+    req.body.readyToShowOff = true
     Designer.create(req.body, (error, createdDesigner) => {
         if (error) {
             console.log(error)
@@ -66,6 +68,6 @@ router.get('/:id', (req,res) => {
             designer: foundDesigner
         })
     })
-})})
+})
 
 module.exports = router

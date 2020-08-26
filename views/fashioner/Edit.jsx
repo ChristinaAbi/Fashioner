@@ -8,12 +8,12 @@ class Edit extends React.Component {
             <Layout>
                 <div>
                     <h1>
-                        Edit {name} Post
+                        Edit {title} Post
                     </h1>
                     <form action={`/fashioner/${_id}?_method=PUT`} method="POST">
                         Title: <input type="text" name="title" defaultValue={title} />
                         <br />
-                        
+
                         Entry Number: <input type="text" name="entryNumber" defaultValue={entryNumber} />
                         <br />
 
