@@ -1,6 +1,6 @@
-# Fashioner
+# Fashionyr
 
-Welcome to Fashioner/Designer, THE site for fashion bloggers and designers to share their creations!
+Welcome to Fashionyr/Designer, THE site for fashion bloggers and designers to share their creations!
 
 This site was created using the following programs:
 - express
